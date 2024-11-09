@@ -41,3 +41,4 @@ For more information, feel free to contact the maintainer at [amanitoama570@gmai
 ---
 
 Happy Proxying!
+Developed with ❤️ by Amani Toama
