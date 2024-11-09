@@ -15,16 +15,57 @@ Welcome to **ProxyList-Top-Speed**! This repository provides a comprehensive lis
 
 The repository contains the following files:
 
-- `http` : Contains a list of HTTP proxies.
-- `https` : Contains a list of HTTPS proxies.
-- `socks4` : Contains a list of SOCKS4 proxies.
-- `socks5` : Contains a list of SOCKS5 proxies.
+- `proxy_http.txt` : Contains a list of HTTP proxies.
+- `proxy_https.txt` : Contains a list of HTTPS proxies.
+- `proxy_socks4.txt` : Contains a list of SOCKS4 proxies.
+- `proxy_socks5.txt` : Contains a list of SOCKS5 proxies.
 
 Each file is formatted as a plain text file, listing proxies in the format `[IP]:[Port]`.
 
 ## Usage
 
-To use the proxies, simply download the respective file and integrate the proxies into your application or script.
+To use the proxies, you can download the respective file and integrate the proxies into your application or script. Below are the commands to download the files for different operating systems and using Python.
+
+### Downloading using Command Line
+
+#### Windows
+```sh
+curl -o proxy_http.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_http.txt
+curl -o proxy_https.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_https.txt
+curl -o proxy_socks4.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_socks4.txt
+curl -o proxy_socks5.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_socks5.txt
+```
+
+#### macOS/Linux
+```sh
+wget -O proxy_http.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_http.txt
+wget -O proxy_https.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_https.txt
+wget -O proxy_socks4.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_socks4.txt
+wget -O proxy_socks5.txt https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_socks5.txt
+```
+
+### Downloading using Python
+```python
+import requests
+
+files = {
+    "proxy_http.txt": "https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_http.txt",
+    "proxy_https.txt": "https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_https.txt",
+    "proxy_socks4.txt": "https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_socks4.txt",
+    "proxy_socks5.txt": "https://raw.githubusercontent.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/master/proxy_socks5.txt"
+}
+
+for filename, url in files.items():
+    response = requests.get(url)
+    with open(filename, "w") as file:
+        file.write(response.text)
+```
+
+## Checking Proxies
+
+You can check the proxies using the Python tool [proxychecker](https://github.com/AmaniToamaWebDevelp1/proxychecker.git). Follow the instructions in the tool's repository to verify the proxies provided in this project.
+
+![ProxyChecker Tool](https://github.com/AmaniToamaWebDevelp1/proxyList-Top-Speed/blob/master/12Capture.PNG)
 
 ## Contribution
 
@@ -41,4 +82,3 @@ For more information, feel free to contact the maintainer at [amanitoama570@gmai
 ---
 
 Happy Proxying!
-Developed with ❤️ by Amani Toama
