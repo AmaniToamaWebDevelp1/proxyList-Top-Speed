@@ -1,106 +1,43 @@
-# proxyList-Top-Speed
+# ProxyList-Top-Speed
+
+![How Proxy Servers Work](https://brightdata.com/wp-content/uploads/2024/05/How-proxy-servers-work.png)
 
 ## Overview
-**proxyList-Top-Speed** provides a list of high-speed, free, public, forward proxy servers, updated daily.
 
-![Proxy List](https://brightdata.com/wp-content/uploads/2024/05/How-proxy-servers-work.png)
+Welcome to **ProxyList-Top-Speed**! This repository provides a comprehensive list of proxy servers. The proxies are categorized into four types:
 
-## Getting Started
+1. **HTTP**
+2. **HTTPS**
+3. **SOCKS4**
+4. **SOCKS5**
 
-### Download
-To download and save the proxy list to a local file `proxyList-Top-Speed.txt` with the format `IP:PORT`, use the following command:
-```bash
-curl -sSf "https://raw.githubusercontent.com/Amani-Toam/proxyList-Top-Speed/master/proxyList-Top-Speed-raw.txt" > proxyList-Top-Speed.txt
-```
+## Files
 
-### File Format
+The repository contains the following files:
 
-#### proxyList-Top-Speed.txt
-```plaintext
-IP:Port | Country | Anonymity | Type | Google Passed
+- `http` : Contains a list of HTTP proxies.
+- `https` : Contains a list of HTTPS proxies.
+- `socks4` : Contains a list of SOCKS4 proxies.
+- `socks5` : Contains a list of SOCKS5 proxies.
 
-Example:
-200.2.125.90:8080 | AR | N | S! | +
+Each file is formatted as a plain text file, listing proxies in the format `[IP]:[Port]`.
 
-Legend:
-1. IP address
-2. Port number
-3. Country code (ISO 3166-1 alpha-2)
-4. Anonymity 
-   - N: No anonymity
-   - A: Anonymity
-   - H: High anonymity
-5. Type
-   - HTTP
-   - S: HTTP/HTTPS
-   - !: Incoming IP differs from outgoing IP
-6. Google passed
-   - +: Yes
-   - -: No
-```
+## Usage
 
-#### proxyList-Top-Speed-status.txt
-```plaintext
-IP:Port | Status
+To use the proxies, simply download the respective file and integrate the proxies into your application or script.
 
-Example:
-200.2.125.90:8080 | success
+## Contribution
 
-Legend:
-1. IP address
-2. Status
-   - success: Low latency (0-9 seconds)
-   - failure: High latency (10+ seconds)
-```
+Contributions are welcome! If you have proxies to add or updates to existing proxies, please fork the repository and submit a pull request.
 
-## API Usage
+## License
 
-### PubProxy API
-[PubProxy](http://pubproxy.com/) offers a free, robust API to narrow down the proxy to your desired specification. Here are some example parameters and usage:
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
-```plaintext
-Parameters:
-- FORMAT: json, txt (Output format)
-- LEVEL: anonymous, elite (Anonymity level)
-- TYPE: http, socks4, socks5 (Proxy protocol)
-- LAST_CHECK: 1-1000 (Last check time in minutes)
-- LIMIT: 1-20 (Number of proxy results)
-- COUNTRY: US,CA,... (Country of the proxy)
-- NOT_COUNTRY: MX,CA,... (Exclude proxy countries)
-- PORT: Number (Specify port number)
-- GOOGLE: Boolean (Google passed proxies)
-- HTTPS: Boolean (Supports HTTPS request)
-- GET: Boolean (Supports GET request)
-- POST: Boolean (Supports POST request)
-- USER_AGENT: Boolean (Supports USER_AGENT request)
-- COOKIES: Boolean (Supports COOKIES request)
-- REFERER: Boolean (Supports REFERER request)
+## Contact
 
-Examples:
-# Retrieve one (1) socks5 proxy.
-curl "http://pubproxy.com/api/proxy?limit=1&format=txt&type=socks5"
-
-# Retrieve two (2) HTTP proxies from the US that support HTTPS.
-curl "http://pubproxy.com/api/proxy?limit=2&format=txt&http=true&country=US&type=http"
-```
-
-## Test Proxy List
-
-Test the proxy list with my other tool [ProxyChecker](https://github.com/AmaniToamaWebDevelp1/proxychecker.git):
-- A fast and efficient command-line tool for validating proxies.
-- Designed for cybersecurity professionals, developers, and web scrapers.
-- Supports both single proxy checks and bulk validation from files and URLs.
-- Compatible across HTTP, HTTPS, and SOCKS protocols.
-
-## References
-- [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-- [Google passed proxy](https://www.my-proxy.com/blog/google-proxies-dead)
-
-## :star: Credits
-Proxy server data courtesy of:
-- [Proxyspy](http://spys.one/en/)
-- [PubProxy](http://pubproxy.com/)
+For more information, feel free to contact the maintainer at [amanitoama570@gmail.com](mailto:amanitoama570@gmail.com).
 
 ---
 
-**Amani Toama**
+Happy Proxying!
